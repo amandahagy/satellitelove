@@ -7,8 +7,9 @@
 <body>
 	<h1>Hello World</h1>
 	<h:form>
+	<h:outputLabel value="#{msg.name}"/>
 		<h:inputText value="#{helloBean.name}"/>
-		<h:commandButton value="Hello" action="#{helloBean.sayHello}"/>
+		<h:commandButton value="#{msg.hello}" action="#{helloBean.sayHello}"/>
 	</h:form>
 </body>
 </html>
