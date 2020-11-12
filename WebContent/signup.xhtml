@@ -1,24 +1,202 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-          
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<!DOCTYPE html>
+<ui:composition template="/template/_template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
-	<ui:composition template="template/_template.xhtml">
-	
-		<ui:define name="header">
-			header
-		</ui:define>
-		
-		<ui:define name="content">
-			content
-		</ui:define>
-		
-		<ui:define name="footer">
-			footer
-		</ui:define>
-		
-	</ui:composition>
-</html>
+	<ui:define name="title">
+		<h:outputText value="#{msg['Index.title]}" />
+	</ui:define>
+
+	<ui:define name="content">
+		<div>
+			<h1>#{msg['Signup.title']}</h1>
+			<h:form>
+				<h:messages id="msgError" styleClass="errorMsg" />
+
+				<h:panelGrid columns="2" cellpadding="2">
+
+					<h:outputLabel value="#{msg['User.name']}"
+						for="textName" />
+					<h:panelGroup layout="block">
+						<h:inputText id="textName" size="30" alt="Name"
+							value="#{userBean.user.name}"
+							autocomplete="off"
+							required="true"
+							requiredMessage="#{msg['User.nameRequired']}" />
+						<h:message for="textName" styleClass="errorMsg" />
+					</h:panelGroup>
+					
+					<h:outputLabel for="textEmail" value="#{msg['User.email']}" />
+					<h:inputText id="textEmail"
+						size="30"
+						value="#{userBean.user.email}"
+						required="true"
+						requiredMessage="#{msg['User.emailRequired']}"
+						validatorMessage="#{msg['User.emailInvalid']}" >
+						<f:validateRegex
+							pattern="^[_A-Za-z0-9-+]+(.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(.[A-Za-z0-9]+)*(.[A-Za-z]{2,})$" />
+					</h:inputText>
+
+					<h:outputLabel for="textPassword" value="#{msg['User.password']}" />
+					<h:inputSecret id="textPassword"
+						size="30"
+						value="#{userBean.user.password}" />
+
+					<h:outputLabel value="#{msg['User.creationDate']}" for="textCreationDate" />
+					<h:inputText id="textCreationDate" readonly="true" size="30"
+						value="#{userBean.user.creationDate.time}">
+						<f:convertDateTime pattern="#{msg['User.dateFormat']}" />
+					</h:inputText>
+					
+					<h:outputLabel value="#{msg['User.birthday']}" for="textBirthday" />
+					<h:inputText id="textBirthday" size="30"
+						value="#{userBean.user.birthday.time}">
+						<f:convertDateTime pattern="#{msg['User.dateFormat']}" />
+					</h:inputText>
+
+					<h:outputLabel value="#{msg['User.sun']}"
+						for="oneListboxSun" />
+					<h:selectOneListbox id="oneListboxSun"
+						value="#{UserBean.user.sun}" required="true"
+						requiredMessage="#{msg['User.sunRequired']}">
+						<f:selectItem itemLabel="#{msg['User.sun.aries']}" itemValue="1" />
+						<f:selectItem itemLabel="#{msg['User.sun.taurus']}" itemValue="2" />
+						<f:selectItem itemLabel="#{msg['User.sun.gemini']}" itemValue="3" />
+						<f:selectItem itemLabel="#{msg['User.sun.cancer']}" itemValue="4" />
+						<f:selectItem itemLabel="#{msg['User.sun.leo']}" itemValue="5" />
+						<f:selectItem itemLabel="#{msg['User.sun.virgo']}" itemValue="6" />
+						<f:selectItem itemLabel="#{msg['User.sun.libra']}" itemValue="7" />
+						<f:selectItem itemLabel="#{msg['User.sun.scorpio']}" itemValue="8" />
+						<f:selectItem itemLabel="#{msg['User.sun.sagitarius']}" itemValue="9" />
+						<f:selectItem itemLabel="#{msg['User.sun.capricorn']}" itemValue="10" />
+						<f:selectItem itemLabel="#{msg['User.sun.aquarius']}" itemValue="11" />
+						<f:selectItem itemLabel="#{msg['User.sun.pisces']}" itemValue="12" />
+					</h:selectOneListbox>
+					
+					<h:outputLabel value="#{msg['User.moon']}"
+						for="oneListboxMoon" />
+					<h:selectOneListbox id="oneListboxMoon"
+						value="#{UserBean.user.moon}" required="true"
+						requiredMessage="#{msg['User.moonRequired']}">
+						<f:selectItem itemLabel="#{msg['User.moon.aries']}" itemValue="1" />
+						<f:selectItem itemLabel="#{msg['User.moon.taurus']}" itemValue="2" />
+						<f:selectItem itemLabel="#{msg['User.moon.gemini']}" itemValue="3" />
+						<f:selectItem itemLabel="#{msg['User.moon.cancer']}" itemValue="4" />
+						<f:selectItem itemLabel="#{msg['User.moon.leo']}" itemValue="5" />
+						<f:selectItem itemLabel="#{msg['User.moon.virgo']}" itemValue="6" />
+						<f:selectItem itemLabel="#{msg['User.moon.libra']}" itemValue="7" />
+						<f:selectItem itemLabel="#{msg['User.moon.scorpio']}" itemValue="8" />
+						<f:selectItem itemLabel="#{msg['User.moon.sagitarius']}" itemValue="9" />
+						<f:selectItem itemLabel="#{msg['User.moon.capricorn']}" itemValue="10" />
+						<f:selectItem itemLabel="#{msg['User.moon.aquarius']}" itemValue="11" />
+						<f:selectItem itemLabel="#{msg['User.moon.pisces']}" itemValue="12" />
+					</h:selectOneListbox>
+					
+					<h:outputLabel value="#{msg['User.venus']}"
+						for="oneListboxVenus" />
+					<h:selectOneListbox id="oneListboxVenus"
+						value="#{UserBean.user.venus}" required="true"
+						requiredMessage="#{msg['User.venusRequired']}">
+						<f:selectItem itemLabel="#{msg['User.venus.aries']}" itemValue="1" />
+						<f:selectItem itemLabel="#{msg['User.venus.taurus']}" itemValue="2" />
+						<f:selectItem itemLabel="#{msg['User.venus.gemini']}" itemValue="3" />
+						<f:selectItem itemLabel="#{msg['User.venus.cancer']}" itemValue="4" />
+						<f:selectItem itemLabel="#{msg['User.venus.leo']}" itemValue="5" />
+						<f:selectItem itemLabel="#{msg['User.venus.virgo']}" itemValue="6" />
+						<f:selectItem itemLabel="#{msg['User.venus.libra']}" itemValue="7" />
+						<f:selectItem itemLabel="#{msg['User.venus.scorpio']}" itemValue="8" />
+						<f:selectItem itemLabel="#{msg['User.venus.sagitarius']}" itemValue="9" />
+						<f:selectItem itemLabel="#{msg['User.venus.capricorn']}" itemValue="10" />
+						<f:selectItem itemLabel="#{msg['User.venus.aquarius']}" itemValue="11" />
+						<f:selectItem itemLabel="#{msg['User.venus.pisces']}" itemValue="12" />
+					</h:selectOneListbox>
+					
+					<h:outputLabel value="#{msg['User.mars']}"
+						for="oneListboxMars" />
+					<h:selectOneListbox id="oneListboxMars"
+						value="#{UserBean.user.mars}" required="true"
+						requiredMessage="#{msg['User.marsRequired']}">
+						<f:selectItem itemLabel="#{msg['User.mars.aries']}" itemValue="1" />
+						<f:selectItem itemLabel="#{msg['User.mars.taurus']}" itemValue="2" />
+						<f:selectItem itemLabel="#{msg['User.mars.gemini']}" itemValue="3" />
+						<f:selectItem itemLabel="#{msg['User.mars.cancer']}" itemValue="4" />
+						<f:selectItem itemLabel="#{msg['User.mars.leo']}" itemValue="5" />
+						<f:selectItem itemLabel="#{msg['User.mars.virgo']}" itemValue="6" />
+						<f:selectItem itemLabel="#{msg['User.mars.libra']}" itemValue="7" />
+						<f:selectItem itemLabel="#{msg['User.mars.scorpio']}" itemValue="8" />
+						<f:selectItem itemLabel="#{msg['User.mars.sagitarius']}" itemValue="9" />
+						<f:selectItem itemLabel="#{msg['User.mars.capricorn']}" itemValue="10" />
+						<f:selectItem itemLabel="#{msg['User.mars.aquarius']}" itemValue="11" />
+						<f:selectItem itemLabel="#{msg['User.mars.pisces']}" itemValue="12" />
+					</h:selectOneListbox>
+					
+					<h:outputLabel value="#{msg['User.asc']}"
+						for="oneListboxAsc" />
+					<h:selectOneListbox id="oneListboxAsc"
+						value="#{UserBean.user.asc}" required="true"
+						requiredMessage="#{msg['User.ascRequired']}">
+						<f:selectItem itemLabel="#{msg['User.asc.aries']}" itemValue="1" />
+						<f:selectItem itemLabel="#{msg['User.asc.taurus']}" itemValue="2" />
+						<f:selectItem itemLabel="#{msg['User.asc.gemini']}" itemValue="3" />
+						<f:selectItem itemLabel="#{msg['User.asc.cancer']}" itemValue="4" />
+						<f:selectItem itemLabel="#{msg['User.asc.leo']}" itemValue="5" />
+						<f:selectItem itemLabel="#{msg['User.asc.virgo']}" itemValue="6" />
+						<f:selectItem itemLabel="#{msg['User.asc.libra']}" itemValue="7" />
+						<f:selectItem itemLabel="#{msg['User.asc.scorpio']}" itemValue="8" />
+						<f:selectItem itemLabel="#{msg['User.asc.sagitarius']}" itemValue="9" />
+						<f:selectItem itemLabel="#{msg['User.asc.capricorn']}" itemValue="10" />
+						<f:selectItem itemLabel="#{msg['User.asc.aquarius']}" itemValue="11" />
+						<f:selectItem itemLabel="#{msg['User.asc.pisces']}" itemValue="12" />
+					</h:selectOneListbox>
+					
+					<h:outputLabel value="#{msg['User.house5']}"
+						for="oneListboxHouse5" />
+					<h:selectOneListbox id="oneListboxHouse5"
+						value="#{UserBean.user.house5}" required="true"
+						requiredMessage="#{msg['User.house5Required']}">
+						<f:selectItem itemLabel="#{msg['User.house5.aries']}" itemValue="1" />
+						<f:selectItem itemLabel="#{msg['User.house5.taurus']}" itemValue="2" />
+						<f:selectItem itemLabel="#{msg['User.house5.gemini']}" itemValue="3" />
+						<f:selectItem itemLabel="#{msg['User.house5.cancer']}" itemValue="4" />
+						<f:selectItem itemLabel="#{msg['User.house5.leo']}" itemValue="5" />
+						<f:selectItem itemLabel="#{msg['User.house5.virgo']}" itemValue="6" />
+						<f:selectItem itemLabel="#{msg['User.house5.libra']}" itemValue="7" />
+						<f:selectItem itemLabel="#{msg['User.house5.scorpio']}" itemValue="8" />
+						<f:selectItem itemLabel="#{msg['User.house5.sagitarius']}" itemValue="9" />
+						<f:selectItem itemLabel="#{msg['User.house5.capricorn']}" itemValue="10" />
+						<f:selectItem itemLabel="#{msg['User.house5.aquarius']}" itemValue="11" />
+						<f:selectItem itemLabel="#{msg['User.house5.pisces']}" itemValue="12" />
+					</h:selectOneListbox>
+					
+					<h:outputLabel value="#{msg['User.house7']}"
+						for="oneListboxHouse7" />
+					<h:selectOneListbox id="oneListboxHouse7"
+						value="#{UserBean.user.house7}" required="true"
+						requiredMessage="#{msg['User.house7Required']}">
+						<f:selectItem itemLabel="#{msg['User.house7.aries']}" itemValue="1" />
+						<f:selectItem itemLabel="#{msg['User.house7.taurus']}" itemValue="2" />
+						<f:selectItem itemLabel="#{msg['User.house7.gemini']}" itemValue="3" />
+						<f:selectItem itemLabel="#{msg['User.house7.cancer']}" itemValue="4" />
+						<f:selectItem itemLabel="#{msg['User.house7.leo']}" itemValue="5" />
+						<f:selectItem itemLabel="#{msg['User.house7.virgo']}" itemValue="6" />
+						<f:selectItem itemLabel="#{msg['User.house7.libra']}" itemValue="7" />
+						<f:selectItem itemLabel="#{msg['User.house7.scorpio']}" itemValue="8" />
+						<f:selectItem itemLabel="#{msg['User.house7.sagitarius']}" itemValue="9" />
+						<f:selectItem itemLabel="#{msg['User.house7.capricorn']}" itemValue="10" />
+						<f:selectItem itemLabel="#{msg['User.house7.aquarius']}" itemValue="11" />
+						<f:selectItem itemLabel="#{msg['User.house7.pisces']}" itemValue="12" />
+					</h:selectOneListbox>
+
+					<h:commandButton styleClass="submit" value="Sent"
+						actionListener="#{userBean.create}" />
+
+					<h:commandButton styleClass="submit" value="Home" immediate="true"
+						action="#{userBean.navigateHome}" />
+				</h:panelGrid>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
