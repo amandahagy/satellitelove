@@ -11,94 +11,120 @@ public class User implements Serializable {
 	private Calendar birthday;
 	private String name;
 	private Calendar creationDate;
-	private int sun;
-	private int asc;
-	private int house5;
-	private int house7;
-	private int moon;
-	private int venus;
-	private int mars;
+	private byte sun;
+	private byte asc;
+	private byte house5;
+	private byte house7;
+	private byte moon;
+	private byte venus;
+	private byte mars;
 	
 	public User() {
 		creationDate = Calendar.getInstance();
 	}
-	
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public Calendar getBirthday() {
 		return birthday;
 	}
+
 	public void setBirthday(Calendar birthday) {
 		this.birthday = birthday;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public Calendar getCreationDate() {
 		return creationDate;
 	}
+
 	public void setCreationDate(Calendar creationDate) {
 		this.creationDate = creationDate;
 	}
-	public int getSun() {
+
+	public byte getSun() {
 		return sun;
 	}
-	public void setSun(int sun) {
+
+	public void setSun(byte sun) {
 		this.sun = sun;
 	}
-	public int getAsc() {
+
+	public byte getAsc() {
 		return asc;
 	}
-	public void setAsc(int asc) {
+
+	public void setAsc(byte asc) {
 		this.asc = asc;
 	}
-	public int getHouse5() {
+
+	public byte getHouse5() {
 		return house5;
 	}
-	public void setHouse5(int house5) {
+
+	public void setHouse5(byte house5) {
 		this.house5 = house5;
 	}
-	public int getHouse7() {
+
+	public byte getHouse7() {
 		return house7;
 	}
-	public void setHouse7(int house7) {
+
+	public void setHouse7(byte house7) {
 		this.house7 = house7;
 	}
-	public int getMoon() {
+
+	public byte getMoon() {
 		return moon;
 	}
-	public void setMoon(int moon) {
+
+	public void setMoon(byte moon) {
 		this.moon = moon;
 	}
-	public int getVenus() {
+
+	public byte getVenus() {
 		return venus;
 	}
-	public void setVenus(int venus) {
+
+	public void setVenus(byte venus) {
 		this.venus = venus;
 	}
-	public int getMars() {
+
+	public byte getMars() {
 		return mars;
 	}
-	public void setMars(int mars) {
+
+	public void setMars(byte mars) {
 		this.mars = mars;
 	}
+	
 }
