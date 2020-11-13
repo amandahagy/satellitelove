@@ -1,6 +1,5 @@
 package com.shiningstars.satellitelove.bean;
 
-import java.util.Locale;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
