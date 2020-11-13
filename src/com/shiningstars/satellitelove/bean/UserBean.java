@@ -31,7 +31,7 @@ public class UserBean {
 	FacesContext.getCurrentInstance().addMessage(null, msg);
 	}
 	
-	//Post homepage
+	//Navigate homepage
 	public String navegateHome() {
 		return "index?faces-redirect=true";
 	}
