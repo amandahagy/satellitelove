@@ -58,8 +58,8 @@
 					</h:inputText>
 
 					<h:outputLabel value="#{msg['PlanetSun']}"
-						for="oneListboxSun" />
-					<h:selectOneListbox id="oneListboxSun"
+						for="oneMenuSun" />
+					<h:selectOneMenu id="oneMenuSun"
 						value="#{UserBean.user.sun}" required="true"
 						requiredMessage="#{msg['User.sunRequired']}">
 						<f:selectItem itemLabel="#{msg['AriesSign']}" itemValue="1" />
@@ -74,11 +74,11 @@
 						<f:selectItem itemLabel="#{msg['CapricornSign']}" itemValue="10" />
 						<f:selectItem itemLabel="#{msg['AquariusSign']}" itemValue="11" />
 						<f:selectItem itemLabel="#{msg['PiscesSign']}" itemValue="12" />
-					</h:selectOneListbox>
+					</h:selectOneMenu>
 					
 					<h:outputLabel value="#{msg['PlanetMoon']}"
-						for="oneListboxMoon" />
-					<h:selectOneListbox id="oneListboxMoon"
+						for="oneMenuMoon" />
+					<h:selectOneMenu id="oneMenuMoon"
 						value="#{UserBean.user.moon}" required="true"
 						requiredMessage="#{msg['User.moonRequired']}">
 						<f:selectItem itemLabel="#{msg['AriesSign']}" itemValue="1" />
@@ -93,11 +93,11 @@
 						<f:selectItem itemLabel="#{msg['CapricornSign']}" itemValue="10" />
 						<f:selectItem itemLabel="#{msg['AquariusSign']}" itemValue="11" />
 						<f:selectItem itemLabel="#{msg['PiscesSign']}" itemValue="12" />
-					</h:selectOneListbox>
+					</h:selectOneMenu>
 					
 					<h:outputLabel value="#{msg['PlanetVenus']}"
-						for="oneListboxVenus" />
-					<h:selectOneListbox id="oneListboxVenus"
+						for="oneMenuVenus" />
+					<h:selectOneMenu id="oneMenuVenus"
 						value="#{UserBean.user.venus}" required="true"
 						requiredMessage="#{msg['User.venusRequired']}">
 						<f:selectItem itemLabel="#{msg['AriesSign']}" itemValue="1" />
@@ -112,11 +112,11 @@
 						<f:selectItem itemLabel="#{msg['CapricornSign']}" itemValue="10" />
 						<f:selectItem itemLabel="#{msg['AquariusSign']}" itemValue="11" />
 						<f:selectItem itemLabel="#{msg['PiscesSign']}" itemValue="12" />
-					</h:selectOneListbox>
+					</h:selectOneMenu>
 					
 					<h:outputLabel value="#{msg['PlanetMars']}"
-						for="oneListboxMars" />
-					<h:selectOneListbox id="oneListboxMars"
+						for="oneMenuMars" />
+					<h:selectOneMenu id="oneMenuMars"
 						value="#{UserBean.user.mars}" required="true"
 						requiredMessage="#{msg['User.marsRequired']}">
 						<f:selectItem itemLabel="#{msg['AriesSign']}" itemValue="1" />
@@ -131,11 +131,11 @@
 						<f:selectItem itemLabel="#{msg['CapricornSign']}" itemValue="10" />
 						<f:selectItem itemLabel="#{msg['AquariusSign']}" itemValue="11" />
 						<f:selectItem itemLabel="#{msg['PiscesSign']}" itemValue="12" />
-					</h:selectOneListbox>
+					</h:selectOneMenu>
 					
 					<h:outputLabel value="#{msg['Asc']}"
-						for="oneListboxAsc" />
-					<h:selectOneListbox id="oneListboxAsc"
+						for="oneMenuAsc" />
+					<h:selectOneMenu id="oneMenuAsc"
 						value="#{UserBean.user.asc}" required="true"
 						requiredMessage="#{msg['User.ascRequired']}">
 						<f:selectItem itemLabel="#{msg['AriesSign']}" itemValue="1" />
@@ -150,11 +150,11 @@
 						<f:selectItem itemLabel="#{msg['CapricornSign']}" itemValue="10" />
 						<f:selectItem itemLabel="#{msg['AquariusSign']}" itemValue="11" />
 						<f:selectItem itemLabel="#{msg['PiscesSign']}" itemValue="12" />
-					</h:selectOneListbox>
+					</h:selectOneMenu>
 					
 					<h:outputLabel value="#{msg['House5']}"
-						for="oneListboxHouse5" />
-					<h:selectOneListbox id="oneListboxHouse5"
+						for="oneMenuHouse5" />
+					<h:selectOneMenu id="oneMenuHouse5"
 						value="#{UserBean.user.house5}" required="true"
 						requiredMessage="#{msg['User.house5Required']}">
 						<f:selectItem itemLabel="#{msg['AriesSign']}" itemValue="1" />
@@ -169,11 +169,11 @@
 						<f:selectItem itemLabel="#{msg['CapricornSign']}" itemValue="10" />
 						<f:selectItem itemLabel="#{msg['AquariusSign']}" itemValue="11" />
 						<f:selectItem itemLabel="#{msg['PiscesSign']}" itemValue="12" />
-					</h:selectOneListbox>
+					</h:selectOneMenu>
 					
 					<h:outputLabel value="#{msg['House7']}"
-						for="oneListboxHouse7" />
-					<h:selectOneListbox id="oneListboxHouse7"
+						for="oneMenuHouse7" />
+					<h:selectOneMenu id="oneMenuHouse7"
 						value="#{UserBean.user.house7}" required="true"
 						requiredMessage="#{msg['User.house7Required']}">
 						<f:selectItem itemLabel="#{msg['AriesSign']}" itemValue="1" />
@@ -188,7 +188,7 @@
 						<f:selectItem itemLabel="#{msg['CapricornSign']}" itemValue="10" />
 						<f:selectItem itemLabel="#{msg['AquariusSign']}" itemValue="11" />
 						<f:selectItem itemLabel="#{msg['PiscesSign']}" itemValue="12" />
-					</h:selectOneListbox>
+					</h:selectOneMenu>
 
 					<h:commandButton styleClass="submit" value="Sent"
 						actionListener="#{userBean.create}" />
