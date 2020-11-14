@@ -19,19 +19,19 @@
 
 				<h:panelGrid columns="2" cellpadding="2">
 
-					<h:outputLabel value="#{msg['User.name']}"
+					<p:outputLabel value="#{msg['User.name']}"
 						for="textName" />
 					<h:panelGroup layout="block">
-						<h:inputText id="textName" size="30" alt="Name"
+						<p:inputText id="textName" size="30" alt="Name"
 							value="#{userBean.user.name}"
 							autocomplete="off"
 							required="true"
 							requiredMessage="#{msg['User.nameRequired']}" />
-						<h:message for="textName" styleClass="errorMsg" />
+						<p:message for="textName" styleClass="errorMsg" />
 					</h:panelGroup>
 					
-					<h:outputLabel for="textEmail" value="#{msg['User.email']}" />
-					<h:inputText id="textEmail"
+					<p:outputLabel for="textEmail" value="#{msg['User.email']}" />
+					<p:inputText id="textEmail"
 						size="30"
 						value="#{userBean.user.email}"
 						required="true"
@@ -39,28 +39,28 @@
 						validatorMessage="#{msg['User.emailInvalid']}" >
 						<f:validateRegex
 							pattern="^[_A-Za-z0-9-+]+(.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(.[A-Za-z0-9]+)*(.[A-Za-z]{2,})$" />
-					</h:inputText>
+					</p:inputText>
 
-					<h:outputLabel for="textPassword" value="#{msg['User.password']}" />
-					<h:inputSecret id="textPassword"
+					<p:outputLabel for="textPassword" value="#{msg['User.password']}" />
+					<p:inputSecret id="textPassword"
 						size="30"
 						value="#{userBean.user.password}" />
 
-					<h:outputLabel value="#{msg['User.creationDate']}" for="textCreationDate" />
-					<h:inputText id="textCreationDate" readonly="true" size="30"
+					<p:outputLabel value="#{msg['User.creationDate']}" for="textCreationDate" />
+					<p:inputText id="textCreationDate" readonly="true" size="30"
 						value="#{userBean.user.creationDate.time}">
 						<f:convertDateTime pattern="#{msg['User.dateFormat']}" />
-					</h:inputText>
+					</p:inputText>
 					
-					<h:outputLabel value="#{msg['User.birthday']}" for="textBirthday" />
-					<h:inputText id="textBirthday" size="30"
+					<p:outputLabel value="#{msg['User.birthday']}" for="textBirthday" />
+					<p:inputText id="textBirthday" size="30"
 						value="#{userBean.user.birthday.time}">
 						<f:convertDateTime pattern="#{msg['User.dateFormat']}" />
-					</h:inputText>
+					</p:inputText>
 
-					<h:outputLabel value="#{msg['PlanetSun']}"
+					<p:outputLabel value="#{msg['PlanetSun']}"
 						for="oneMenuSun" />
-					<h:selectOneMenu id="oneMenuSun"
+					<p:selectOneMenu id="oneMenuSun"
 						value="#{UserBean.user.sun}" required="true"
 						requiredMessage="#{msg['User.sunRequired']}">
 						<f:selectItem itemLabel="#{msg['AriesSign']}" itemValue="1" />
@@ -75,11 +75,11 @@
 						<f:selectItem itemLabel="#{msg['CapricornSign']}" itemValue="10" />
 						<f:selectItem itemLabel="#{msg['AquariusSign']}" itemValue="11" />
 						<f:selectItem itemLabel="#{msg['PiscesSign']}" itemValue="12" />
-					</h:selectOneMenu>
+					</p:selectOneMenu>
 					
-					<h:outputLabel value="#{msg['PlanetMoon']}"
+					<p:outputLabel value="#{msg['PlanetMoon']}"
 						for="oneMenuMoon" />
-					<h:selectOneMenu id="oneMenuMoon"
+					<p:selectOneMenu id="oneMenuMoon"
 						value="#{UserBean.user.moon}" required="true"
 						requiredMessage="#{msg['User.moonRequired']}">
 						<f:selectItem itemLabel="#{msg['AriesSign']}" itemValue="1" />
@@ -94,11 +94,11 @@
 						<f:selectItem itemLabel="#{msg['CapricornSign']}" itemValue="10" />
 						<f:selectItem itemLabel="#{msg['AquariusSign']}" itemValue="11" />
 						<f:selectItem itemLabel="#{msg['PiscesSign']}" itemValue="12" />
-					</h:selectOneMenu>
+					</p:selectOneMenu>
 					
-					<h:outputLabel value="#{msg['PlanetVenus']}"
+					<p:outputLabel value="#{msg['PlanetVenus']}"
 						for="oneMenuVenus" />
-					<h:selectOneMenu id="oneMenuVenus"
+					<p:selectOneMenu id="oneMenuVenus"
 						value="#{UserBean.user.venus}" required="true"
 						requiredMessage="#{msg['User.venusRequired']}">
 						<f:selectItem itemLabel="#{msg['AriesSign']}" itemValue="1" />
@@ -113,11 +113,11 @@
 						<f:selectItem itemLabel="#{msg['CapricornSign']}" itemValue="10" />
 						<f:selectItem itemLabel="#{msg['AquariusSign']}" itemValue="11" />
 						<f:selectItem itemLabel="#{msg['PiscesSign']}" itemValue="12" />
-					</h:selectOneMenu>
+					</p:selectOneMenu>
 					
-					<h:outputLabel value="#{msg['PlanetMars']}"
+					<p:outputLabel value="#{msg['PlanetMars']}"
 						for="oneMenuMars" />
-					<h:selectOneMenu id="oneMenuMars"
+					<p:selectOneMenu id="oneMenuMars"
 						value="#{UserBean.user.mars}" required="true"
 						requiredMessage="#{msg['User.marsRequired']}">
 						<f:selectItem itemLabel="#{msg['AriesSign']}" itemValue="1" />
@@ -132,11 +132,11 @@
 						<f:selectItem itemLabel="#{msg['CapricornSign']}" itemValue="10" />
 						<f:selectItem itemLabel="#{msg['AquariusSign']}" itemValue="11" />
 						<f:selectItem itemLabel="#{msg['PiscesSign']}" itemValue="12" />
-					</h:selectOneMenu>
+					</p:selectOneMenu>
 					
-					<h:outputLabel value="#{msg['Asc']}"
+					<p:outputLabel value="#{msg['Asc']}"
 						for="oneMenuAsc" />
-					<h:selectOneMenu id="oneMenuAsc"
+					<p:selectOneMenu id="oneMenuAsc"
 						value="#{UserBean.user.asc}" required="true"
 						requiredMessage="#{msg['User.ascRequired']}">
 						<f:selectItem itemLabel="#{msg['AriesSign']}" itemValue="1" />
@@ -151,11 +151,11 @@
 						<f:selectItem itemLabel="#{msg['CapricornSign']}" itemValue="10" />
 						<f:selectItem itemLabel="#{msg['AquariusSign']}" itemValue="11" />
 						<f:selectItem itemLabel="#{msg['PiscesSign']}" itemValue="12" />
-					</h:selectOneMenu>
+					</p:selectOneMenu>
 					
-					<h:outputLabel value="#{msg['House5']}"
+					<p:outputLabel value="#{msg['House5']}"
 						for="oneMenuHouse5" />
-					<h:selectOneMenu id="oneMenuHouse5"
+					<p:selectOneMenu id="oneMenuHouse5"
 						value="#{UserBean.user.house5}" required="true"
 						requiredMessage="#{msg['User.house5Required']}">
 						<f:selectItem itemLabel="#{msg['AriesSign']}" itemValue="1" />
@@ -170,11 +170,11 @@
 						<f:selectItem itemLabel="#{msg['CapricornSign']}" itemValue="10" />
 						<f:selectItem itemLabel="#{msg['AquariusSign']}" itemValue="11" />
 						<f:selectItem itemLabel="#{msg['PiscesSign']}" itemValue="12" />
-					</h:selectOneMenu>
+					</p:selectOneMenu>
 					
-					<h:outputLabel value="#{msg['House7']}"
+					<p:outputLabel value="#{msg['House7']}"
 						for="oneMenuHouse7" />
-					<h:selectOneMenu id="oneMenuHouse7"
+					<p:selectOneMenu id="oneMenuHouse7"
 						value="#{UserBean.user.house7}" required="true"
 						requiredMessage="#{msg['User.house7Required']}">
 						<f:selectItem itemLabel="#{msg['AriesSign']}" itemValue="1" />
@@ -189,12 +189,12 @@
 						<f:selectItem itemLabel="#{msg['CapricornSign']}" itemValue="10" />
 						<f:selectItem itemLabel="#{msg['AquariusSign']}" itemValue="11" />
 						<f:selectItem itemLabel="#{msg['PiscesSign']}" itemValue="12" />
-					</h:selectOneMenu>
+					</p:selectOneMenu>
 
-					<h:commandButton styleClass="submit" value="Sent"
+					<p:commandButton styleClass="submit" value="Sent"
 						actionListener="#{userBean.create}" />
 
-					<h:commandButton styleClass="submit" value="Home" immediate="true"
+					<p:commandButton styleClass="submit" value="Home" immediate="true"
 						action="#{userBean.browseHome}" />
 				</h:panelGrid>
 			</h:form>
