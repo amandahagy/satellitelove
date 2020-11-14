@@ -31,8 +31,8 @@ public class UserBean {
 	FacesContext.getCurrentInstance().addMessage(null, msg);
 	}
 	
-	//Navigate homepage
-	public String navegateHome() {
+	//Browse homepage
+	public String browseHome() {
 		return "index?faces-redirect=true";
 	}
 	
