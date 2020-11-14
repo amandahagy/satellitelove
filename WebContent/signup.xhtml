@@ -191,10 +191,10 @@
 						<f:selectItem itemLabel="#{msg['PiscesSign']}" itemValue="12" />
 					</p:selectOneMenu>
 
-					<p:commandButton styleClass="submit" value="Sent"
-						actionListener="#{userBean.create}" />
+					<p:commandButton value="Send"
+						actionListener="#{userBean.create}" update="@form" />
 
-					<p:commandButton styleClass="submit" value="Home" immediate="true"
+					<p:commandButton value="Home" immediate="true"
 						action="#{userBean.browseHome}" />
 				</h:panelGrid>
 			</h:form>
